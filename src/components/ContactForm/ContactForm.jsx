@@ -12,7 +12,7 @@ class Form extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    if (this.props.dublicateContacts(e)) {
+    if (this.props.checkEqualContacts(e)) {
       alert(`${this.state.name} already in contacts`);
       return;
     }
