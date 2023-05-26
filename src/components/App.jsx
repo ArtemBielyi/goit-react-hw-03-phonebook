@@ -9,8 +9,6 @@ export class App extends Component {
   state = {
     contacts: [],
     filter: '',
-    name: '',
-    number: '',
   };
 
   addContact = ({ name, number }) => {
@@ -49,7 +47,7 @@ export class App extends Component {
       this.setState({ contacts: parsedContacts });
     }
   }
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(_, prevState) {
     if (this.state.contacts !== prevState.contacts) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
